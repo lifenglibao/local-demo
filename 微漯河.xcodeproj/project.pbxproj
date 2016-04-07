@@ -16,9 +16,6 @@
 		0D2D8AA51CB10FBD0013B327 /* leftbackiamge.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2D8A9C1CB10FBD0013B327 /* leftbackiamge.png */; };
 		0D2D8AA61CB10FBD0013B327 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2D8A9D1CB10FBD0013B327 /* logo.png */; };
 		0D2D8AA71CB10FBD0013B327 /* userImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2D8A9E1CB10FBD0013B327 /* userImg.png */; };
-		0D2D8AAD1CB110F70013B327 /* ActivityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D8AAC1CB110F50013B327 /* ActivityTableView.swift */; };
-		0D2D8AAF1CB111CC0013B327 /* ConcernsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D8AAE1CB111CC0013B327 /* ConcernsTableView.swift */; };
-		0D2D8AB11CB112090013B327 /* HotspotTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D8AB01CB112090013B327 /* HotspotTableView.swift */; };
 		0D2D8AB51CB112CD0013B327 /* HomePageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D8AB41CB112CD0013B327 /* HomePageControl.swift */; };
 		0D2D8AB71CB1135B0013B327 /* YSSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D8AB61CB1135B0013B327 /* YSSegmentedControl.swift */; };
 		0D2D8B291CB6046D0013B327 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D8AFD1CB6046D0013B327 /* MJRefreshAutoFooter.m */; };
@@ -41,6 +38,7 @@
 		0D2D8B3A1CB6046D0013B327 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D8B241CB6046D0013B327 /* UIScrollView+MJExtension.m */; };
 		0D2D8B3B1CB6046D0013B327 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D8B261CB6046D0013B327 /* UIScrollView+MJRefresh.m */; };
 		0D2D8B3C1CB6046D0013B327 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D8B281CB6046D0013B327 /* UIView+MJExtension.m */; };
+		0DA056AE1CB660DF00C00911 /* HomePageControlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA056AD1CB660DF00C00911 /* HomePageControlModel.swift */; };
 		0DAE575C1CAF678B004E36B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE575B1CAF678B004E36B4 /* AppDelegate.swift */; };
 		0DAE575E1CAF678C004E36B4 /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE575D1CAF678C004E36B4 /* HomeTabBarViewController.swift */; };
 		0DAE57611CAF678C004E36B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DAE575F1CAF678C004E36B4 /* Main.storyboard */; };
@@ -65,9 +63,6 @@
 		0D2D8A9C1CB10FBD0013B327 /* leftbackiamge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftbackiamge.png; sourceTree = "<group>"; };
 		0D2D8A9D1CB10FBD0013B327 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		0D2D8A9E1CB10FBD0013B327 /* userImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userImg.png; sourceTree = "<group>"; };
-		0D2D8AAC1CB110F50013B327 /* ActivityTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityTableView.swift; path = HomePage/ActivityTableView.swift; sourceTree = SOURCE_ROOT; };
-		0D2D8AAE1CB111CC0013B327 /* ConcernsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConcernsTableView.swift; path = HomePage/ConcernsTableView.swift; sourceTree = SOURCE_ROOT; };
-		0D2D8AB01CB112090013B327 /* HotspotTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HotspotTableView.swift; path = HomePage/HotspotTableView.swift; sourceTree = SOURCE_ROOT; };
 		0D2D8AB41CB112CD0013B327 /* HomePageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePageControl.swift; path = HomePage/HomePageControl.swift; sourceTree = SOURCE_ROOT; };
 		0D2D8AB61CB1135B0013B327 /* YSSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSSegmentedControl.swift; sourceTree = "<group>"; };
 		0D2D8AFC1CB6046D0013B327 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
@@ -110,6 +105,7 @@
 		0D2D8B261CB6046D0013B327 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		0D2D8B271CB6046D0013B327 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		0D2D8B281CB6046D0013B327 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		0DA056AD1CB660DF00C00911 /* HomePageControlModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePageControlModel.swift; path = Models/HomePageControlModel.swift; sourceTree = SOURCE_ROOT; };
 		0DAE57581CAF678B004E36B4 /* 微漯河.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微漯河.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAE575B1CAF678B004E36B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DAE575D1CAF678C004E36B4 /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
@@ -143,9 +139,6 @@
 		0D2D8A8C1CB108C70013B327 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
-				0D2D8AAC1CB110F50013B327 /* ActivityTableView.swift */,
-				0D2D8AAE1CB111CC0013B327 /* ConcernsTableView.swift */,
-				0D2D8AB01CB112090013B327 /* HotspotTableView.swift */,
 				0D2D8AB41CB112CD0013B327 /* HomePageControl.swift */,
 			);
 			name = HomePage;
@@ -304,6 +297,7 @@
 			children = (
 				0DAE57721CAF78EC004E36B4 /* User.swift */,
 				0DAE578D1CB0B120004E36B4 /* CellStyle.swift */,
+				0DA056AD1CB660DF00C00911 /* HomePageControlModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -427,7 +421,6 @@
 			files = (
 				0D2D8B351CB6046D0013B327 /* MJRefreshNormalHeader.m in Sources */,
 				0D2D8B2B1CB6046D0013B327 /* MJRefreshComponent.m in Sources */,
-				0D2D8AAF1CB111CC0013B327 /* ConcernsTableView.swift in Sources */,
 				0DAE575E1CAF678C004E36B4 /* HomeTabBarViewController.swift in Sources */,
 				0DAE57851CAF833E004E36B4 /* LeftSlideViewController.m in Sources */,
 				0DAE578E1CB0B120004E36B4 /* CellStyle.swift in Sources */,
@@ -436,6 +429,7 @@
 				0DAE575C1CAF678B004E36B4 /* AppDelegate.swift in Sources */,
 				0D2D8B361CB6046D0013B327 /* MJRefreshStateHeader.m in Sources */,
 				0D2D8B371CB6046D0013B327 /* DIYRefreshGifHeader.m in Sources */,
+				0DA056AE1CB660DF00C00911 /* HomePageControlModel.swift in Sources */,
 				0D2D8B2E1CB6046D0013B327 /* MJRefreshAutoGifFooter.m in Sources */,
 				0D2D8B3B1CB6046D0013B327 /* UIScrollView+MJRefresh.m in Sources */,
 				0DAE578C1CAFA1AD004E36B4 /* SlideInfoViewController.swift in Sources */,
@@ -452,9 +446,7 @@
 				0DAE57781CAF7C5D004E36B4 /* HomeSplashAnimViewController.swift in Sources */,
 				0D2D8B2D1CB6046D0013B327 /* MJRefreshHeader.m in Sources */,
 				0D2D8B301CB6046D0013B327 /* MJRefreshAutoStateFooter.m in Sources */,
-				0D2D8AB11CB112090013B327 /* HotspotTableView.swift in Sources */,
 				0D2D8B321CB6046D0013B327 /* MJRefreshBackNormalFooter.m in Sources */,
-				0D2D8AAD1CB110F70013B327 /* ActivityTableView.swift in Sources */,
 				0D2D8B3A1CB6046D0013B327 /* UIScrollView+MJExtension.m in Sources */,
 				0D2D8B3C1CB6046D0013B327 /* UIView+MJExtension.m in Sources */,
 				0DAE57731CAF78EC004E36B4 /* User.swift in Sources */,

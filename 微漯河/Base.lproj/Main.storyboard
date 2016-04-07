@@ -324,34 +324,46 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3d-F9-94g">
                                         <rect key="frame" x="0.0" y="0.0" width="960" height="421"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0gf-Sj-CCt" customClass="ConcernsTableView" customModule="微漯河" customModuleProvider="target">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JXk-mJ-d1H">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="421"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcf-nj-Yfa" customClass="HotspotTableView" customModule="微漯河" customModuleProvider="target">
+                                                <connections>
+                                                    <outlet property="dataSource" destination="t4Y-Fe-xPS" id="Mgf-LA-wQy"/>
+                                                    <outlet property="delegate" destination="t4Y-Fe-xPS" id="XwG-ex-J5M"/>
+                                                </connections>
+                                            </tableView>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yXc-tq-0TK">
                                                 <rect key="frame" x="320" y="0.0" width="320" height="421"/>
-                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ry0-5L-eUl" customClass="ActivityTableView" customModule="微漯河" customModuleProvider="target">
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="t4Y-Fe-xPS" id="QT9-aw-j1Y"/>
+                                                    <outlet property="delegate" destination="t4Y-Fe-xPS" id="p9l-hr-TJs"/>
+                                                </connections>
+                                            </tableView>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a2L-ra-SCT">
                                                 <rect key="frame" x="640" y="0.0" width="320" height="421"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="t4Y-Fe-xPS" id="M0Z-dx-e9b"/>
+                                                    <outlet property="delegate" destination="t4Y-Fe-xPS" id="hV3-b4-Tik"/>
+                                                </connections>
+                                            </tableView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="vcf-nj-Yfa" secondAttribute="bottom" id="2r6-ky-p7D"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ry0-5L-eUl" secondAttribute="trailing" id="3VB-rV-LnC"/>
-                                            <constraint firstItem="vcf-nj-Yfa" firstAttribute="leading" secondItem="Q3d-F9-94g" secondAttribute="leading" constant="320" id="HTT-K0-xQm"/>
-                                            <constraint firstAttribute="bottom" secondItem="Ry0-5L-eUl" secondAttribute="bottom" id="Hhd-Va-4YY"/>
-                                            <constraint firstItem="Ry0-5L-eUl" firstAttribute="leading" secondItem="Q3d-F9-94g" secondAttribute="leading" constant="640" id="I2t-Xy-w4w"/>
-                                            <constraint firstItem="0gf-Sj-CCt" firstAttribute="leading" secondItem="Q3d-F9-94g" secondAttribute="leading" id="KH3-Nu-x0r"/>
+                                            <constraint firstAttribute="trailing" secondItem="a2L-ra-SCT" secondAttribute="trailing" id="2am-yy-yvo"/>
+                                            <constraint firstItem="JXk-mJ-d1H" firstAttribute="top" secondItem="Q3d-F9-94g" secondAttribute="top" id="3tp-il-xx7"/>
+                                            <constraint firstItem="yXc-tq-0TK" firstAttribute="leading" secondItem="Q3d-F9-94g" secondAttribute="leading" constant="320" id="6BP-Bh-qaL"/>
+                                            <constraint firstItem="a2L-ra-SCT" firstAttribute="leading" secondItem="Q3d-F9-94g" secondAttribute="leading" constant="640" id="8og-RU-UiD"/>
+                                            <constraint firstItem="JXk-mJ-d1H" firstAttribute="leading" secondItem="Q3d-F9-94g" secondAttribute="leading" id="ACH-cs-WGY"/>
                                             <constraint firstAttribute="width" constant="960" id="NJ7-v6-U5q"/>
-                                            <constraint firstItem="vcf-nj-Yfa" firstAttribute="top" secondItem="Q3d-F9-94g" secondAttribute="top" id="VLg-Dw-WAM"/>
-                                            <constraint firstItem="vcf-nj-Yfa" firstAttribute="leading" secondItem="0gf-Sj-CCt" secondAttribute="trailing" id="Z5m-v1-L2V"/>
-                                            <constraint firstAttribute="bottom" secondItem="0gf-Sj-CCt" secondAttribute="bottom" id="czF-bc-Plu"/>
-                                            <constraint firstItem="Ry0-5L-eUl" firstAttribute="top" secondItem="Q3d-F9-94g" secondAttribute="top" id="das-eW-haP"/>
-                                            <constraint firstItem="0gf-Sj-CCt" firstAttribute="top" secondItem="Q3d-F9-94g" secondAttribute="top" id="eNV-wx-v7f"/>
-                                            <constraint firstItem="Ry0-5L-eUl" firstAttribute="leading" secondItem="vcf-nj-Yfa" secondAttribute="trailing" id="pYA-Ur-bKV"/>
+                                            <constraint firstAttribute="bottom" secondItem="JXk-mJ-d1H" secondAttribute="bottom" id="Uzr-pR-olP"/>
+                                            <constraint firstItem="yXc-tq-0TK" firstAttribute="top" secondItem="Q3d-F9-94g" secondAttribute="top" id="dao-il-gm5"/>
+                                            <constraint firstItem="a2L-ra-SCT" firstAttribute="bottom" secondItem="yXc-tq-0TK" secondAttribute="bottom" id="e9h-vE-uRq"/>
+                                            <constraint firstItem="a2L-ra-SCT" firstAttribute="top" secondItem="yXc-tq-0TK" secondAttribute="top" id="gUj-Px-Lf1"/>
+                                            <constraint firstAttribute="bottom" secondItem="yXc-tq-0TK" secondAttribute="bottom" id="hBI-yQ-bKv"/>
+                                            <constraint firstItem="yXc-tq-0TK" firstAttribute="leading" secondItem="JXk-mJ-d1H" secondAttribute="trailing" id="seM-OF-p9t"/>
+                                            <constraint firstItem="a2L-ra-SCT" firstAttribute="leading" secondItem="yXc-tq-0TK" secondAttribute="trailing" id="uk2-o7-xto"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -362,6 +374,9 @@
                                     <constraint firstItem="Q3d-F9-94g" firstAttribute="top" secondItem="xfF-WQ-a9H" secondAttribute="top" id="R5l-gG-Liv"/>
                                     <constraint firstAttribute="trailing" secondItem="Q3d-F9-94g" secondAttribute="trailing" id="kOa-Sf-GZi"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="t4Y-Fe-xPS" id="EJz-tL-giM"/>
+                                </connections>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ypg-0g-P9U" customClass="YSSegmentedControl" customModule="微漯河" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
@@ -404,13 +419,13 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="activityTable" destination="Ry0-5L-eUl" id="65O-4C-KVn"/>
-                        <outlet property="concernsTable" destination="0gf-Sj-CCt" id="QFr-85-k0b"/>
-                        <outlet property="hotspotTable" destination="vcf-nj-Yfa" id="gNV-WT-n3O"/>
+                        <outlet property="activityTable" destination="a2L-ra-SCT" id="0a6-O4-mFY"/>
+                        <outlet property="concernsTable" destination="JXk-mJ-d1H" id="7tW-Vp-aWc"/>
+                        <outlet property="hotspotTable" destination="yXc-tq-0TK" id="vnG-z3-Zdj"/>
                         <outlet property="scrollView" destination="xfF-WQ-a9H" id="tcB-Wq-d7t"/>
-                        <outlet property="secondViewLeading" destination="HTT-K0-xQm" id="ZUC-ca-oE1"/>
+                        <outlet property="secondViewLeading" destination="6BP-Bh-qaL" id="FUF-vE-2lw"/>
                         <outlet property="segmented" destination="ypg-0g-P9U" id="tfV-IK-RKK"/>
-                        <outlet property="thrViewLeading" destination="I2t-Xy-w4w" id="90i-KB-wxj"/>
+                        <outlet property="thrViewLeading" destination="8og-RU-UiD" id="BUU-RE-9nV"/>
                         <outlet property="viewWidth" destination="NJ7-v6-U5q" id="OcZ-pa-oKk"/>
                     </connections>
                 </viewController>
