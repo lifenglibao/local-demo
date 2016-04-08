@@ -64,6 +64,8 @@ class HomePageControlModel: UIViewController {
         let diyRefreshGifHeader       = DIYRefreshGifHeader.init()
         hotspotTable!.mj_header       = diyRefreshGifHeader.headerWithRefreshingTarget(self, refreshingAction: "loadData")
         hotspotTable!.mj_header.beginRefreshing()
+        hotspotTable!.separatorColor  = UIColor.clearColor()
+        hotspotTable!.separatorStyle  = .None
     }
     
     func initActivityTable () {

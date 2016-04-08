@@ -10,7 +10,11 @@ import Foundation
 import UIKit
 
 let cellStyle = CellStyle()
+let commonFunctions = CommonFunctions()
 
+func STRETCH_IMAGE (image:UIImage, edgeInsets:UIEdgeInsets)->UIImage {
+    return image.resizableImageWithCapInsets(edgeInsets, resizingMode: UIImageResizingMode.Stretch)
+}
 
 //*****************-- GET VIEW CONTROLLER FROM STORY BOARD --**************//
 

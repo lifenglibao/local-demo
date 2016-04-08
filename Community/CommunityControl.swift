@@ -1,16 +1,18 @@
 //
-//  HomePageControl.swift
+//  CommunityControl.swift
 //  微漯河
 //
-//  Created by iAPPS Pte Ltd on 03/04/16.
+//  Created by iAPPS Pte Ltd on 08/04/16.
 //
 //
 
 import Foundation
 import UIKit
 
-class HomePageControl: HomePageControlModel,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,YSSegmentedControlDelegate{
-    
+class CommunityControl: CommunityControlModel,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,YSSegmentedControlDelegate {
+
+    var segmented  : YSSegmentedControl?
+
     let imageDic = [
         
     ]
@@ -33,25 +35,31 @@ class HomePageControl: HomePageControlModel,UITableViewDataSource,UITableViewDel
     var dataDic1 =  NSDictionary()
     var dataDic2 =  NSDictionary()
     var dataDic3 =  NSDictionary()
-
+    
     var data =  NSMutableArray()
-
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
-        viewWidth?.constant = CGRectGetWidth(self.view.frame) * 3
-        secondViewLeading?.constant = CGRectGetWidth(self.view.frame)
-        thrViewLeading?.constant = CGRectGetWidth(self.view.frame) * 2
-    }
-
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-   
-        segmented!.delegate     = self
-        view.addSubview(segmented!)
+        
+        segmented = YSSegmentedControl(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: self.view.frame.size.width,
+                height: 34),
+            titles: [
+                "热门板块",
+                "我收藏的"
+            ],
+            action: {
+                control, index in
+        })
+        
+        segmented!.delegate = self
         
         dataDic =  NSDictionary(objects: ["<<女子为帮朋友丢了工作>> 后续: 当事人系辅警 泄露个人信息 <<女子为帮朋友丢了工作>> 后续: 当事人系辅警 泄露个人信息","微漯河","99阅读",imageDic,"04-08"], forKeys: ["title","from","amt_read","image","time"])
         dataDic1 =  NSDictionary(objects: ["论坛热议, 在漯河26岁的女孩已经算老窝头了吗? 论坛热议, 在漯河26岁的女孩已经算老窝头了吗?","27379271823","693阅读",imageDic1,"04-08"], forKeys: ["title","from","amt_read","image","time"])
@@ -62,59 +70,38 @@ class HomePageControl: HomePageControlModel,UITableViewDataSource,UITableViewDel
         data.addObject(dataDic1)
         data.addObject(dataDic2)
         data.addObject(dataDic3)
-
+        
     }
     
     func loadData () {
         
-        concernsTable!.reloadData()
-        concernsTable!.mj_header.endRefreshing()
-        hotspotTable!.mj_header.endRefreshing()
-        activityTable!.mj_header.endRefreshing()
+        communityTable!.reloadData()
+        communityTable!.mj_header.endRefreshing()
         print("successful load data")
     }
     
-
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let identifier = "cell"
-        var cell = tableView.dequeueReusableCellWithIdentifier(identifier)
-
-        if tableView == concernsTable {
-            if cell == nil {
-                cell = cellStyle.initWithHomeConcernsStyle(concernsTable!, style: .Default, reuseIdentifier: identifier, dataDict: data[indexPath.row] as! NSDictionary)
-            }
-            return cell!
-        }
+        let identifier = "community_cell"
         
-        if tableView == hotspotTable {
-            if cell == nil {
-                cell = cellStyle.initWithHomeHotspotStyle(hotspotTable!, style: .Default, reuseIdentifier: identifier, dataDict: data[indexPath.row] as! NSDictionary)
-                cell!.selectionStyle = .None;
-            }
-            return cell!
+        let cell = cellStyle.initWithCommunityStyle(communityTable!, indexPath: indexPath, style: .Default, reuseIdentifier: identifier, dataDict: data[indexPath.row] as! NSDictionary)
+        if indexPath.row == 0 {
+            cell.contentView.addSubview(segmented!)
         }
-        if tableView == activityTable {
-            if cell == nil {
-                cell = UITableViewCell.init(style: .Default, reuseIdentifier: identifier)
-            }
-            cell?.textLabel?.text = "123"
-            return cell!
-        }
+        return cell
         
-        return cell!
     }
     
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        if tableView == concernsTable{
+        if tableView == tableView{
             if data[indexPath.row].objectForKey("image")!.count == 0 {
                 
                 return commonFunctions.heightForText(data[indexPath.row].objectForKey("title") as! String, font: UIFont.boldSystemFontOfSize(15), width: tableView.width) + 50
@@ -127,22 +114,13 @@ class HomePageControl: HomePageControlModel,UITableViewDataSource,UITableViewDel
             }else {
                 return 0
             }
-            
-        }else if tableView == hotspotTable{
-            return 360 + 20
-        }else if tableView == activityTable{
-            return 30
         }
         return 0
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == concernsTable{
-            return 4
-        }else if tableView == hotspotTable{
-            return 2
-        }else if tableView == activityTable{
-            return 1
+        if tableView == tableView{
+            return 3
         }
         return 0
     }
