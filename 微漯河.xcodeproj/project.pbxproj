@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D28D3D01CB8D9230034A448 /* CommunityCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D28D3CF1CB8D9230034A448 /* CommunityCollectionCell.swift */; };
+		0D28D3D31CB8DACB0034A448 /* CommunityCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D28D3D21CB8DACB0034A448 /* CommunityCollectionView.swift */; };
+		0D28D3D51CB8EC590034A448 /* SourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D28D3D41CB8EC590034A448 /* SourceModel.swift */; };
+		0D28D3DE1CB8F9B60034A448 /* icn_bills.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D28D3D61CB8F9B60034A448 /* icn_bills.png */; };
+		0D28D3DF1CB8F9B60034A448 /* icn_directory.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D28D3D71CB8F9B60034A448 /* icn_directory.png */; };
+		0D28D3E01CB8F9B60034A448 /* icn_events.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D28D3D81CB8F9B60034A448 /* icn_events.png */; };
+		0D28D3E11CB8F9B60034A448 /* icn_invest.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D28D3D91CB8F9B60034A448 /* icn_invest.png */; };
+		0D28D3E21CB8F9B60034A448 /* icn_mart.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D28D3DA1CB8F9B60034A448 /* icn_mart.png */; };
+		0D28D3E31CB8F9B60034A448 /* icn_peerlending.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D28D3DB1CB8F9B60034A448 /* icn_peerlending.png */; };
+		0D28D3E41CB8F9B60034A448 /* icn_pif.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D28D3DC1CB8F9B60034A448 /* icn_pif.png */; };
+		0D28D3E51CB8F9B60034A448 /* icn_remit.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D28D3DD1CB8F9B60034A448 /* icn_remit.png */; };
 		0D2D8A9F1CB10FBD0013B327 /* icon_community.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2D8A961CB10FBD0013B327 /* icon_community.png */; };
 		0D2D8AA01CB10FBD0013B327 /* icon_fans.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2D8A971CB10FBD0013B327 /* icon_fans.png */; };
 		0D2D8AA11CB10FBD0013B327 /* icon_favorites.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2D8A981CB10FBD0013B327 /* icon_favorites.png */; };
@@ -63,6 +74,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D28D3CF1CB8D9230034A448 /* CommunityCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommunityCollectionCell.swift; path = Community/CommunityCollectionCell.swift; sourceTree = SOURCE_ROOT; };
+		0D28D3D21CB8DACB0034A448 /* CommunityCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommunityCollectionView.swift; path = Community/CommunityCollectionView.swift; sourceTree = SOURCE_ROOT; };
+		0D28D3D41CB8EC590034A448 /* SourceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SourceModel.swift; path = Models/SourceModel.swift; sourceTree = SOURCE_ROOT; };
+		0D28D3D61CB8F9B60034A448 /* icn_bills.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_bills.png; sourceTree = "<group>"; };
+		0D28D3D71CB8F9B60034A448 /* icn_directory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_directory.png; sourceTree = "<group>"; };
+		0D28D3D81CB8F9B60034A448 /* icn_events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_events.png; sourceTree = "<group>"; };
+		0D28D3D91CB8F9B60034A448 /* icn_invest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_invest.png; sourceTree = "<group>"; };
+		0D28D3DA1CB8F9B60034A448 /* icn_mart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_mart.png; sourceTree = "<group>"; };
+		0D28D3DB1CB8F9B60034A448 /* icn_peerlending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_peerlending.png; sourceTree = "<group>"; };
+		0D28D3DC1CB8F9B60034A448 /* icn_pif.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_pif.png; sourceTree = "<group>"; };
+		0D28D3DD1CB8F9B60034A448 /* icn_remit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_remit.png; sourceTree = "<group>"; };
 		0D2D8A961CB10FBD0013B327 /* icon_community.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_community.png; sourceTree = "<group>"; };
 		0D2D8A971CB10FBD0013B327 /* icon_fans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_fans.png; sourceTree = "<group>"; };
 		0D2D8A981CB10FBD0013B327 /* icon_favorites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_favorites.png; sourceTree = "<group>"; };
@@ -270,6 +292,8 @@
 			isa = PBXGroup;
 			children = (
 				0DA056DB1CB7A68600C00911 /* CommunityControl.swift */,
+				0D28D3CF1CB8D9230034A448 /* CommunityCollectionCell.swift */,
+				0D28D3D21CB8DACB0034A448 /* CommunityCollectionView.swift */,
 			);
 			name = Community;
 			sourceTree = "<group>";
@@ -327,6 +351,7 @@
 				0DAE578D1CB0B120004E36B4 /* CellStyle.swift */,
 				0DA056AD1CB660DF00C00911 /* HomePageControlModel.swift */,
 				0DA056DD1CB7A74F00C00911 /* CommunityControlModel.swift */,
+				0D28D3D41CB8EC590034A448 /* SourceModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -343,6 +368,14 @@
 		0DAE57791CAF8042004E36B4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0D28D3D61CB8F9B60034A448 /* icn_bills.png */,
+				0D28D3D71CB8F9B60034A448 /* icn_directory.png */,
+				0D28D3D81CB8F9B60034A448 /* icn_events.png */,
+				0D28D3D91CB8F9B60034A448 /* icn_invest.png */,
+				0D28D3DA1CB8F9B60034A448 /* icn_mart.png */,
+				0D28D3DB1CB8F9B60034A448 /* icn_peerlending.png */,
+				0D28D3DC1CB8F9B60034A448 /* icn_pif.png */,
+				0D28D3DD1CB8F9B60034A448 /* icn_remit.png */,
 				0DA056DF1CB7B7B300C00911 /* arrow_down.png */,
 				0DA056D81CB7918000C00911 /* HomeHotspotBackgroundImage@2x.png */,
 				0DA056C21CB75AE900C00911 /* IMG_1722.png */,
@@ -433,7 +466,10 @@
 			files = (
 				0D2D8AA01CB10FBD0013B327 /* icon_fans.png in Resources */,
 				0DAE57661CAF678C004E36B4 /* LaunchScreen.storyboard in Resources */,
+				0D28D3E41CB8F9B60034A448 /* icn_pif.png in Resources */,
 				0D2D8AA61CB10FBD0013B327 /* logo.png in Resources */,
+				0D28D3E11CB8F9B60034A448 /* icn_invest.png in Resources */,
+				0D28D3DE1CB8F9B60034A448 /* icn_bills.png in Resources */,
 				0D2D8AA31CB10FBD0013B327 /* icon_posts.png in Resources */,
 				0D2D8AA11CB10FBD0013B327 /* icon_favorites.png in Resources */,
 				0DA056D91CB7918000C00911 /* HomeHotspotBackgroundImage@2x.png in Resources */,
@@ -441,12 +477,17 @@
 				0DAE57631CAF678C004E36B4 /* Assets.xcassets in Resources */,
 				0D2D8AA71CB10FBD0013B327 /* userImg.png in Resources */,
 				0D2D8B381CB6046D0013B327 /* MJRefresh.bundle in Resources */,
+				0D28D3E21CB8F9B60034A448 /* icn_mart.png in Resources */,
+				0D28D3E51CB8F9B60034A448 /* icn_remit.png in Resources */,
 				0DA056C91CB75AE900C00911 /* IMG_1725.png in Resources */,
+				0D28D3E31CB8F9B60034A448 /* icn_peerlending.png in Resources */,
 				0DA056C81CB75AE900C00911 /* IMG_1724.png in Resources */,
 				0DA056E01CB7B7B300C00911 /* arrow_down.png in Resources */,
 				0D2D8AA41CB10FBD0013B327 /* icon_search.png in Resources */,
 				0D2D8A9F1CB10FBD0013B327 /* icon_community.png in Resources */,
 				0DA056C71CB75AE900C00911 /* IMG_1723.png in Resources */,
+				0D28D3E01CB8F9B60034A448 /* icn_events.png in Resources */,
+				0D28D3DF1CB8F9B60034A448 /* icn_directory.png in Resources */,
 				0D2D8AA21CB10FBD0013B327 /* icon_followed.png in Resources */,
 				0DAE57611CAF678C004E36B4 /* Main.storyboard in Resources */,
 				0D2D8AA51CB10FBD0013B327 /* leftbackiamge.png in Resources */,
@@ -468,6 +509,7 @@
 				0D2D8B2F1CB6046D0013B327 /* MJRefreshAutoNormalFooter.m in Sources */,
 				0D2D8B2C1CB6046D0013B327 /* MJRefreshFooter.m in Sources */,
 				0DAE575C1CAF678B004E36B4 /* AppDelegate.swift in Sources */,
+				0D28D3D01CB8D9230034A448 /* CommunityCollectionCell.swift in Sources */,
 				0D2D8B361CB6046D0013B327 /* MJRefreshStateHeader.m in Sources */,
 				0D2D8B371CB6046D0013B327 /* DIYRefreshGifHeader.m in Sources */,
 				0DA056DC1CB7A68600C00911 /* CommunityControl.swift in Sources */,
@@ -475,6 +517,7 @@
 				0D2D8B2E1CB6046D0013B327 /* MJRefreshAutoGifFooter.m in Sources */,
 				0D2D8B3B1CB6046D0013B327 /* UIScrollView+MJRefresh.m in Sources */,
 				0DAE578C1CAFA1AD004E36B4 /* SlideInfoViewController.swift in Sources */,
+				0D28D3D31CB8DACB0034A448 /* CommunityCollectionView.swift in Sources */,
 				0D2D8B2A1CB6046D0013B327 /* MJRefreshBackFooter.m in Sources */,
 				0D2D8B391CB6046D0013B327 /* MJRefreshConst.m in Sources */,
 				0D2D8B331CB6046D0013B327 /* MJRefreshBackStateFooter.m in Sources */,
@@ -488,6 +531,7 @@
 				0D2D8B311CB6046D0013B327 /* MJRefreshBackGifFooter.m in Sources */,
 				0DAE57781CAF7C5D004E36B4 /* HomeSplashAnimViewController.swift in Sources */,
 				0D2D8B2D1CB6046D0013B327 /* MJRefreshHeader.m in Sources */,
+				0D28D3D51CB8EC590034A448 /* SourceModel.swift in Sources */,
 				0D2D8B301CB6046D0013B327 /* MJRefreshAutoStateFooter.m in Sources */,
 				0D2D8B321CB6046D0013B327 /* MJRefreshBackNormalFooter.m in Sources */,
 				0D2D8B3A1CB6046D0013B327 /* UIScrollView+MJExtension.m in Sources */,

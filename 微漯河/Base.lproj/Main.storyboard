@@ -461,6 +461,10 @@
                                         <string>Title</string>
                                     </scopeButtonTitles>
                                 </searchBar>
+                                <connections>
+                                    <outlet property="dataSource" destination="nlF-Yr-QD3" id="14g-aG-yLu"/>
+                                    <outlet property="delegate" destination="nlF-Yr-QD3" id="TOX-CD-1xB"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -503,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5T6-Bq-DcV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-221" y="1546"/>
+            <point key="canvasLocation" x="-221.5" y="1545.5"/>
         </scene>
     </scenes>
     <resources>

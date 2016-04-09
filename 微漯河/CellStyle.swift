@@ -242,122 +242,120 @@ class CellStyle:  UITableViewCell {
     internal func initWithCommunityStyle (tableView:UITableView, indexPath:NSIndexPath, style: UITableViewCellStyle,reuseIdentifier: String,dataDict: NSDictionary)->UITableViewCell {
         let cell = UITableViewCell.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        if indexPath.row == 0 {
+        if indexPath.row >= 3 {
+            let IMG_WIDTH : CGFloat = tableView.width/3.3
+            let IMG_HEIGHT : CGFloat = 90
+            let CELL_CONTENT_SPACE : CGFloat = 30
+            let CELL_IMG_SPACE : CGFloat = 5
+            let XOFFSET : CGFloat = 10
+            let YOFFSET : CGFloat = 10
             
+            let cell_IMG_ONE = UIImageView()
+            let cell_IMG_TWO = UIImageView()
+            let cell_IMG_THR = UIImageView()
+            
+            let title_Lbl = UILabel()
+            let from_Lbl  = UILabel()
+            let amtRead_Lbl = UILabel()
+            let date_Lbl    = UILabel()
+            var newFrame:CGRect
+            
+            title_Lbl.text   = dataDict.objectForKey("title") as? String
+            from_Lbl.text    = dataDict.objectForKey("from") as? String
+            date_Lbl.text    = dataDict.objectForKey("time") as? String
+            amtRead_Lbl.text = dataDict.objectForKey("amt_read") as? String
+            
+            title_Lbl.lineBreakMode = .ByWordWrapping
+            title_Lbl.numberOfLines = 0
+            title_Lbl.textAlignment = .Left
+            title_Lbl.font  = UIFont.boldSystemFontOfSize(15)
+            
+            from_Lbl.textAlignment  = .Left
+            from_Lbl.textColor      = UIColor.lightGrayColor()
+            from_Lbl.font           = UIFont.systemFontOfSize(13)
+            
+            amtRead_Lbl.textAlignment  = .Left
+            amtRead_Lbl.textColor      = UIColor.lightGrayColor()
+            amtRead_Lbl.font           = UIFont.systemFontOfSize(13)
+            
+            date_Lbl.textAlignment  = .Left
+            date_Lbl.textColor      = UIColor.lightGrayColor()
+            date_Lbl.font           = UIFont.systemFontOfSize(13)
+            
+            
+            if dataDict.objectForKey("image")!.count == 0 {
+                
+                title_Lbl.frame      = CGRectMake(XOFFSET, YOFFSET, tableView.width - CELL_CONTENT_SPACE, 30)
+                newFrame             = title_Lbl.frame
+                newFrame.size.height = commonFunctions.heightForText(title_Lbl.text!, font: title_Lbl.font, width: tableView.width)
+                title_Lbl.frame      = newFrame
+                
+                newFrame.size.width  = commonFunctions.widthForText(from_Lbl.text!, font: from_Lbl.font)
+                from_Lbl.frame       = CGRectMake(XOFFSET, title_Lbl.height + YOFFSET, newFrame.width, 30)
+                
+                newFrame.size.width  = commonFunctions.widthForText(amtRead_Lbl.text!, font: amtRead_Lbl.font)
+                amtRead_Lbl.frame    = CGRectMake(XOFFSET + from_Lbl.width, title_Lbl.height + YOFFSET, newFrame.width, 30)
+                
+                newFrame.size.width  = commonFunctions.widthForText(date_Lbl.text!, font: date_Lbl.font)
+                date_Lbl.frame       = CGRectMake(tableView.width - newFrame.width, title_Lbl.height + YOFFSET, newFrame.width, 30)
+                
+            }else if dataDict.objectForKey("image")!.count == 1 || dataDict.objectForKey("image")!.count == 2{
+                
+                title_Lbl.frame      = CGRectMake(XOFFSET, YOFFSET, tableView.width - IMG_WIDTH - CELL_CONTENT_SPACE, 30)
+                newFrame             = title_Lbl.frame;
+                newFrame.size.height = commonFunctions.heightForText(title_Lbl.text!, font: title_Lbl.font, width: tableView.width)
+                title_Lbl.frame      = newFrame
+                
+                cell_IMG_ONE.frame   = CGRectMake(tableView.width - IMG_WIDTH - XOFFSET, YOFFSET, IMG_WIDTH , IMG_HEIGHT)
+                cell_IMG_ONE.image   = UIImage(named: dataDict.objectForKey("image")!.objectAtIndex(0).objectForKey("image") as! String)
+                
+                newFrame.size.width  = commonFunctions.widthForText(from_Lbl.text!, font: from_Lbl.font)
+                from_Lbl.frame       = CGRectMake(XOFFSET, cell_IMG_ONE.height - YOFFSET, newFrame.width, 30)
+                
+                newFrame.size.width  = commonFunctions.widthForText(amtRead_Lbl.text!, font: amtRead_Lbl.font)
+                amtRead_Lbl.frame    = CGRectMake(XOFFSET + from_Lbl.width, cell_IMG_ONE.height - YOFFSET, newFrame.width, 30)
+                
+                cell.contentView.addSubview(cell_IMG_ONE)
+                
+            }else if dataDict.objectForKey("image")!.count >= 3{
+                
+                title_Lbl.frame      = CGRectMake(XOFFSET, YOFFSET, tableView.width - CELL_CONTENT_SPACE, 30)
+                newFrame             = title_Lbl.frame;
+                newFrame.size.height = commonFunctions.heightForText(title_Lbl.text!, font: title_Lbl.font, width: tableView.width)
+                title_Lbl.frame      = newFrame
+                
+                cell_IMG_ONE.frame   = CGRectMake(XOFFSET, title_Lbl.height + CELL_IMG_SPACE + YOFFSET, IMG_WIDTH , IMG_HEIGHT)
+                cell_IMG_ONE.image   = UIImage(named: dataDict.objectForKey("image")!.objectAtIndex(0).objectForKey("image") as! String)
+                
+                cell_IMG_TWO.frame   = CGRectMake(IMG_WIDTH + XOFFSET + CELL_IMG_SPACE, title_Lbl.height + CELL_IMG_SPACE + YOFFSET, IMG_WIDTH , IMG_HEIGHT)
+                cell_IMG_TWO.image   = UIImage(named: dataDict.objectForKey("image")!.objectAtIndex(1).objectForKey("image") as! String)
+                
+                cell_IMG_THR.frame   = CGRectMake(IMG_WIDTH * 2 + XOFFSET + CELL_IMG_SPACE * 2 , title_Lbl.height + CELL_IMG_SPACE + YOFFSET, IMG_WIDTH , IMG_HEIGHT)
+                cell_IMG_THR.image   = UIImage(named: dataDict.objectForKey("image")!.objectAtIndex(2).objectForKey("image") as! String)
+                
+                cell.contentView.addSubview(cell_IMG_ONE)
+                cell.contentView.addSubview(cell_IMG_TWO)
+                cell.contentView.addSubview(cell_IMG_THR)
+                
+                newFrame.size.width = commonFunctions.widthForText(from_Lbl.text!, font: from_Lbl.font)
+                from_Lbl.frame      = CGRectMake(XOFFSET, cell_IMG_ONE.height + title_Lbl.height + YOFFSET * 2, newFrame.width, 30)
+                
+                newFrame.size.width = commonFunctions.widthForText(amtRead_Lbl.text!, font: amtRead_Lbl.font)
+                amtRead_Lbl.frame   = CGRectMake(XOFFSET + from_Lbl.width, cell_IMG_ONE.height + title_Lbl.height + YOFFSET * 2, newFrame.width, 30)
+                
+                newFrame.size.width = commonFunctions.widthForText(date_Lbl.text!, font: date_Lbl.font)
+                date_Lbl.frame      = CGRectMake(tableView.width - newFrame.width, cell_IMG_ONE.height + title_Lbl.height + YOFFSET * 2, newFrame.width, 30)
+            }
+            
+            
+            cell.contentView.addSubview(title_Lbl)
+            cell.contentView.addSubview(from_Lbl)
+            cell.contentView.addSubview(amtRead_Lbl)
+            cell.contentView.addSubview(date_Lbl)
+            
+            cell.accessoryType   = .None
+            cell.backgroundColor = UIColor.clearColor()
         }
-        
-        let IMG_WIDTH : CGFloat = tableView.width/3.3
-        let IMG_HEIGHT : CGFloat = 90
-        let CELL_CONTENT_SPACE : CGFloat = 30
-        let CELL_IMG_SPACE : CGFloat = 5
-        let XOFFSET : CGFloat = 10
-        let YOFFSET : CGFloat = 10
-        
-        let cell_IMG_ONE = UIImageView()
-        let cell_IMG_TWO = UIImageView()
-        let cell_IMG_THR = UIImageView()
-        
-        let title_Lbl = UILabel()
-        let from_Lbl  = UILabel()
-        let amtRead_Lbl = UILabel()
-        let date_Lbl    = UILabel()
-        var newFrame:CGRect
-        
-        title_Lbl.text   = dataDict.objectForKey("title") as? String
-        from_Lbl.text    = dataDict.objectForKey("from") as? String
-        date_Lbl.text    = dataDict.objectForKey("time") as? String
-        amtRead_Lbl.text = dataDict.objectForKey("amt_read") as? String
-        
-        title_Lbl.lineBreakMode = .ByWordWrapping
-        title_Lbl.numberOfLines = 0
-        title_Lbl.textAlignment = .Left
-        title_Lbl.font  = UIFont.boldSystemFontOfSize(15)
-        
-        from_Lbl.textAlignment  = .Left
-        from_Lbl.textColor      = UIColor.lightGrayColor()
-        from_Lbl.font           = UIFont.systemFontOfSize(13)
-        
-        amtRead_Lbl.textAlignment  = .Left
-        amtRead_Lbl.textColor      = UIColor.lightGrayColor()
-        amtRead_Lbl.font           = UIFont.systemFontOfSize(13)
-        
-        date_Lbl.textAlignment  = .Left
-        date_Lbl.textColor      = UIColor.lightGrayColor()
-        date_Lbl.font           = UIFont.systemFontOfSize(13)
-        
-        
-        if dataDict.objectForKey("image")!.count == 0 {
-            
-            title_Lbl.frame      = CGRectMake(XOFFSET, YOFFSET, tableView.width - CELL_CONTENT_SPACE, 30)
-            newFrame             = title_Lbl.frame
-            newFrame.size.height = commonFunctions.heightForText(title_Lbl.text!, font: title_Lbl.font, width: tableView.width)
-            title_Lbl.frame      = newFrame
-            
-            newFrame.size.width  = commonFunctions.widthForText(from_Lbl.text!, font: from_Lbl.font)
-            from_Lbl.frame       = CGRectMake(XOFFSET, title_Lbl.height + YOFFSET, newFrame.width, 30)
-            
-            newFrame.size.width  = commonFunctions.widthForText(amtRead_Lbl.text!, font: amtRead_Lbl.font)
-            amtRead_Lbl.frame    = CGRectMake(XOFFSET + from_Lbl.width, title_Lbl.height + YOFFSET, newFrame.width, 30)
-            
-            newFrame.size.width  = commonFunctions.widthForText(date_Lbl.text!, font: date_Lbl.font)
-            date_Lbl.frame       = CGRectMake(tableView.width - newFrame.width, title_Lbl.height + YOFFSET, newFrame.width, 30)
-            
-        }else if dataDict.objectForKey("image")!.count == 1 || dataDict.objectForKey("image")!.count == 2{
-            
-            title_Lbl.frame      = CGRectMake(XOFFSET, YOFFSET, tableView.width - IMG_WIDTH - CELL_CONTENT_SPACE, 30)
-            newFrame             = title_Lbl.frame;
-            newFrame.size.height = commonFunctions.heightForText(title_Lbl.text!, font: title_Lbl.font, width: tableView.width)
-            title_Lbl.frame      = newFrame
-            
-            cell_IMG_ONE.frame   = CGRectMake(tableView.width - IMG_WIDTH - XOFFSET, YOFFSET, IMG_WIDTH , IMG_HEIGHT)
-            cell_IMG_ONE.image   = UIImage(named: dataDict.objectForKey("image")!.objectAtIndex(0).objectForKey("image") as! String)
-            
-            newFrame.size.width  = commonFunctions.widthForText(from_Lbl.text!, font: from_Lbl.font)
-            from_Lbl.frame       = CGRectMake(XOFFSET, cell_IMG_ONE.height - YOFFSET, newFrame.width, 30)
-            
-            newFrame.size.width  = commonFunctions.widthForText(amtRead_Lbl.text!, font: amtRead_Lbl.font)
-            amtRead_Lbl.frame    = CGRectMake(XOFFSET + from_Lbl.width, cell_IMG_ONE.height - YOFFSET, newFrame.width, 30)
-            
-            cell.contentView.addSubview(cell_IMG_ONE)
-            
-        }else if dataDict.objectForKey("image")!.count >= 3{
-            
-            title_Lbl.frame      = CGRectMake(XOFFSET, YOFFSET, tableView.width - CELL_CONTENT_SPACE, 30)
-            newFrame             = title_Lbl.frame;
-            newFrame.size.height = commonFunctions.heightForText(title_Lbl.text!, font: title_Lbl.font, width: tableView.width)
-            title_Lbl.frame      = newFrame
-            
-            cell_IMG_ONE.frame   = CGRectMake(XOFFSET, title_Lbl.height + CELL_IMG_SPACE + YOFFSET, IMG_WIDTH , IMG_HEIGHT)
-            cell_IMG_ONE.image   = UIImage(named: dataDict.objectForKey("image")!.objectAtIndex(0).objectForKey("image") as! String)
-            
-            cell_IMG_TWO.frame   = CGRectMake(IMG_WIDTH + XOFFSET + CELL_IMG_SPACE, title_Lbl.height + CELL_IMG_SPACE + YOFFSET, IMG_WIDTH , IMG_HEIGHT)
-            cell_IMG_TWO.image   = UIImage(named: dataDict.objectForKey("image")!.objectAtIndex(1).objectForKey("image") as! String)
-            
-            cell_IMG_THR.frame   = CGRectMake(IMG_WIDTH * 2 + XOFFSET + CELL_IMG_SPACE * 2 , title_Lbl.height + CELL_IMG_SPACE + YOFFSET, IMG_WIDTH , IMG_HEIGHT)
-            cell_IMG_THR.image   = UIImage(named: dataDict.objectForKey("image")!.objectAtIndex(2).objectForKey("image") as! String)
-            
-            cell.contentView.addSubview(cell_IMG_ONE)
-            cell.contentView.addSubview(cell_IMG_TWO)
-            cell.contentView.addSubview(cell_IMG_THR)
-            
-            newFrame.size.width = commonFunctions.widthForText(from_Lbl.text!, font: from_Lbl.font)
-            from_Lbl.frame      = CGRectMake(XOFFSET, cell_IMG_ONE.height + title_Lbl.height + YOFFSET * 2, newFrame.width, 30)
-            
-            newFrame.size.width = commonFunctions.widthForText(amtRead_Lbl.text!, font: amtRead_Lbl.font)
-            amtRead_Lbl.frame   = CGRectMake(XOFFSET + from_Lbl.width, cell_IMG_ONE.height + title_Lbl.height + YOFFSET * 2, newFrame.width, 30)
-            
-            newFrame.size.width = commonFunctions.widthForText(date_Lbl.text!, font: date_Lbl.font)
-            date_Lbl.frame      = CGRectMake(tableView.width - newFrame.width, cell_IMG_ONE.height + title_Lbl.height + YOFFSET * 2, newFrame.width, 30)
-        }
-        
-        
-        cell.contentView.addSubview(title_Lbl)
-        cell.contentView.addSubview(from_Lbl)
-        cell.contentView.addSubview(amtRead_Lbl)
-        cell.contentView.addSubview(date_Lbl)
-        
-        cell.accessoryType   = .None
-        cell.backgroundColor = UIColor.clearColor()
         
         return cell
     }

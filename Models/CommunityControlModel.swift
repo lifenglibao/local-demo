@@ -14,13 +14,14 @@ class CommunityControlModel: UIViewController {
     @IBOutlet var communityTable  : UITableView?
     @IBOutlet var searchBar  : UISearchBar?
 
+
     override func viewDidAppear(animated: Bool) {
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+                
         let diyRefreshGifHeader = DIYRefreshGifHeader.init()
         communityTable!.mj_header    = diyRefreshGifHeader.headerWithRefreshingTarget(self, refreshingAction: "loadData")
         communityTable!.mj_header.beginRefreshing()
