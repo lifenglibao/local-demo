@@ -12,12 +12,11 @@ import Foundation
 class HomeSplashAnimViewController: UIViewController {
 
     @IBOutlet weak var logo: UIImageView!
-    lazy var leftSlideVC = LeftSlideViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         logo.alpha = 0
-        leftSlideVC = LeftSlideViewController.init()
+        initSideMenu()
 
         // Do any additional setup after loading the view.
     }
@@ -33,15 +32,33 @@ class HomeSplashAnimViewController: UIViewController {
             self.logo.center.x += self.view.bounds.width
                 },completion: {(complete) -> Void in
                     self.dismissViewControllerAnimated(true, completion: nil)
-                    let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                    let vc = GET_VIEW_CONTROLLER(StoryBoard_Home.SB_HOME_TABBAR_VIEW_CONTROLLER)
-                    let slideInfoVC = GET_VIEW_CONTROLLER(StoryBoard_Home.SB_SLIDE_VIEW_CONTROLLER)
-                    appDelegate.window?.rootViewController = self.leftSlideVC.dynamicType.init(leftView: slideInfoVC, andMainView: vc, withEnabled:true)
             })
         })
 
     }
 
+    private func initSideMenu () {
+        
+        var sideMenuViewController = RESideMenu()
+
+        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let slideInfoVC = GET_VIEW_CONTROLLER(StoryBoard_Home.SB_SLIDE_VIEW_CONTROLLER)
+        let rootController = GET_VIEW_CONTROLLER(StoryBoard_Home.SB_HOME_TABBAR_VIEW_CONTROLLER)
+
+        sideMenuViewController = RESideMenu.init(contentViewController: rootController, leftMenuViewController: slideInfoVC, rightMenuViewController: nil)
+        
+        sideMenuViewController.backgroundImage = UIImage(named: "Stars")
+        sideMenuViewController.menuPreferredStatusBarStyle = .LightContent // UIStatusBarStyleLightContent
+        sideMenuViewController.contentViewShadowColor = UIColor.blackColor()
+        sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
+        sideMenuViewController.contentViewShadowOpacity = 0.6
+        sideMenuViewController.contentViewShadowRadius = 12
+        sideMenuViewController.contentViewShadowEnabled = true
+        
+        appDelegate.window?.rootViewController = sideMenuViewController
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

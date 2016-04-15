@@ -33,13 +33,9 @@ class SlideInfoViewController: UIViewController,UITableViewDataSource,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let imageview = UIImageView.init(frame:self.view.bounds)
-        imageview.image = UIImage(named: "leftbackiamge")
-        self.view.addSubview(imageview)
-        self.view.sendSubviewToBack(imageview)
         tableview!.dataSource = self;
         tableview!.delegate  = self;
-        
+        tableview!.backgroundColor = UIColor.clearColor()
         // Do any additional setup after loading the view.
     }
     

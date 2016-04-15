@@ -9,12 +9,15 @@
 import Foundation
 import UIKit
 
-class CommunityControl: CommunityControlModel,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,YSSegmentedControlDelegate,UICollectionViewDataSource {
+class CommunityControl: CommunityControlModel,UIScrollViewDelegate,YSSegmentedControlDelegate{
 
     var segmented  : YSSegmentedControl?
     var popMenuBtn  : UIButton?
     var collectionView : CommunityCollectionView!
     let collectionIdentifierCell = "Cell"
+    var popMenu  = XHPopMenu?()
+
+    var pageIndex = PageIndex.HOTSPOT
 
     let imageDic = [
         
@@ -41,8 +44,7 @@ class CommunityControl: CommunityControlModel,UITableViewDataSource,UITableViewD
 
     var data =  NSMutableArray()
     
-    let arrMenu = SourceModel.loadModels()
-
+    lazy var arrMenu = Array<SourceModel>()
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -50,7 +52,11 @@ class CommunityControl: CommunityControlModel,UITableViewDataSource,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let popMenuHelper = PopMenuHelper()
+        popMenuHelper.delegate = self
+        self.popMenu = popMenuHelper.initPopMenus()
         
+        self.arrMenu = SourceModel.loadHotModels()
         segmented = YSSegmentedControl(
             frame: CGRect(
                 x: 0,
@@ -63,6 +69,15 @@ class CommunityControl: CommunityControlModel,UITableViewDataSource,UITableViewD
             ],
             action: {
                 control, index in
+                
+                self.arrMenu.removeAll()
+                if PageIndex.HOTSPOT.rawValue == index {
+                    self.arrMenu = SourceModel.loadHotModels()
+                }else{
+                    self.arrMenu = SourceModel.loadFavoriteModels()
+                }
+
+                self.collectionView.reloadData()
         })
         
         segmented!.delegate = self
@@ -87,6 +102,7 @@ class CommunityControl: CommunityControlModel,UITableViewDataSource,UITableViewD
         
         collectionView = CommunityCollectionView.init(frame: CGRectMake(0, 0, self.view.width, 220), collectionViewLayout: UICollectionViewLayout.init())
         collectionView.dataSource = self
+        collectionView.delegate   = self
     }
     
     func loadData () {
@@ -96,14 +112,56 @@ class CommunityControl: CommunityControlModel,UITableViewDataSource,UITableViewD
         print("successful load data")
     }
     
-    func showMore () {
+    func segmentedControlWillPressItemAtIndex(segmentedControl: YSSegmentedControl, index: Int) {
         
     }
     
+    func segmentedControlDidPressedItemAtIndex(segmentedControl: YSSegmentedControl, index: Int) {
+        
+    }
+
+}
+extension CommunityControl: UICollectionViewDataSource, UICollectionViewDelegate {
+        
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        return arrMenu.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+    {
+        
+        let cell:CommunityCollectionCell = collectionView.dequeueReusableCellWithReuseIdentifier(collectionIdentifierCell, forIndexPath: indexPath) as! CommunityCollectionCell
+        
+        for view:UIView in cell.contentView.subviews {
+            view.removeFromSuperview()
+        }
+        cell.mainBtn = UIButton.init(frame: CGRectMake(10, 10, 50, 50))
+        cell.menuTitle = UILabel.init(frame: CGRectMake(5, 70, 60, 20))
+        
+        cell.mainBtn?.setImage(UIImage(named: arrMenu[indexPath.row].imgName), forState: .Normal)
+        cell.mainBtn?.tag = arrMenu[indexPath.row].id
+        cell.mainBtn?.addTarget(self, action: "buttonTapped:", forControlEvents: .TouchUpInside)
+        cell.menuTitle?.text = arrMenu[indexPath.row].name
+        cell.menuTitle?.font = UIFont.systemFontOfSize(13)
+        cell.menuTitle?.textColor = UIColor.darkGrayColor()
+        cell.menuTitle?.textAlignment = .Center
+        
+        cell.contentView.addSubview(cell.mainBtn!)
+        cell.contentView.addSubview(cell.menuTitle!)
+        return cell
+    }
+    
+    func buttonTapped (sender:UIButton) {
+        
+    }
+}
+
+extension CommunityControl: UITableViewDataSource,UITableViewDelegate {
+
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -136,15 +194,15 @@ class CommunityControl: CommunityControlModel,UITableViewDataSource,UITableViewD
             popMenuBtn?.setTitle("24小时热点", forState: .Normal)
             popMenuBtn?.setTitleColor(UIColor.darkGrayColor(), forState: .Normal)
             popMenuBtn?.titleLabel?.font = UIFont.systemFontOfSize(13)
-            popMenuBtn?.addTarget(self, action: "showMore", forControlEvents: .TouchUpInside)
+            popMenuBtn?.addTarget(self, action: "popMenuBtnClicked:", forControlEvents: .TouchUpInside)
             
+            cell.contentView.backgroundColor = UIColor.groupTableViewBackgroundColor()
             cell.contentView.addSubview(lastUpdate_Lbl)
             cell.contentView.addSubview(time_Lbl)
             cell.contentView.addSubview(popMenuBtn!)
-
+            
         }
         return cell
-        
     }
     
     
@@ -170,7 +228,6 @@ class CommunityControl: CommunityControlModel,UITableViewDataSource,UITableViewD
                 return 0
             }
         }
-
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -180,51 +237,15 @@ class CommunityControl: CommunityControlModel,UITableViewDataSource,UITableViewD
         return 0
     }
     
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
-    {
-        return arrMenu.count
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
-    {
-        
-        let cell:CommunityCollectionCell = collectionView.dequeueReusableCellWithReuseIdentifier(collectionIdentifierCell, forIndexPath: indexPath) as! CommunityCollectionCell
-        cell.mainBtn = UIButton.init(frame: CGRectMake(10, 10, 50, 50))
-        cell.menuTitle = UILabel.init(frame: CGRectMake(5, 70, 60, 20))
-        
-        cell.mainBtn?.setImage(UIImage(named: arrMenu[indexPath.row].imgName), forState: .Normal)
-        cell.mainBtn?.tag = arrMenu[indexPath.row].id
-        cell.mainBtn?.addTarget(self, action: "buttonTapped:", forControlEvents: .TouchUpInside)
-        cell.menuTitle?.text = arrMenu[indexPath.row].name
-        cell.menuTitle?.font = UIFont.systemFontOfSize(13)
-        cell.menuTitle?.textColor = UIColor.darkGrayColor()
-        cell.menuTitle?.textAlignment = .Center
+}
 
-        cell.contentView.addSubview(cell.mainBtn!)
-        cell.contentView.addSubview(cell.menuTitle!)
-        return cell
+extension CommunityControl : popMenuHelperDelegate{
+    
+    func popMenuBtnClicked (sender:UIButton) {
+        self.popMenu!.showMenuOnView(communityTable, atPoint: CGPointZero)
     }
     
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//        
-//        return CGSizeMake(collectionView.bounds.size.width / 2 - 20, 130.0)
-//    }
-
-    
-    func segmentedControlWillPressItemAtIndex(segmentedControl: YSSegmentedControl, index: Int) {
+    func popMenuSelectd() {
         
     }
-    
-    func segmentedControlDidPressedItemAtIndex(segmentedControl: YSSegmentedControl, index: Int) {
-        
-    }
-    
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        let pageWidth = Int(Float(scrollView.frame.size.width))
-        
-        let page = Int(Float(scrollView.contentOffset.x) / Float(pageWidth))
-        segmented?.selectItemAtIndex(page, withAnimation: true)
-    }
-
 }

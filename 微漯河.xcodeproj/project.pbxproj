@@ -49,6 +49,15 @@
 		0D2D8B3A1CB6046D0013B327 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D8B241CB6046D0013B327 /* UIScrollView+MJExtension.m */; };
 		0D2D8B3B1CB6046D0013B327 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D8B261CB6046D0013B327 /* UIScrollView+MJRefresh.m */; };
 		0D2D8B3C1CB6046D0013B327 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D8B281CB6046D0013B327 /* UIView+MJExtension.m */; };
+		0D93A7491CBE556D00579CDC /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D93A7441CBE556D00579CDC /* RECommonFunctions.m */; };
+		0D93A74A1CBE556D00579CDC /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D93A7461CBE556D00579CDC /* RESideMenu.m */; };
+		0D93A74B1CBE556D00579CDC /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D93A7481CBE556D00579CDC /* UIViewController+RESideMenu.m */; };
+		0D93A74D1CBE576500579CDC /* Stars@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D93A74C1CBE576500579CDC /* Stars@2x.png */; };
+		0D9440C21CC0C7EC008C5321 /* XHPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9440BD1CC0C7EC008C5321 /* XHPopMenu.m */; };
+		0D9440C31CC0C7EC008C5321 /* XHPopMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9440BF1CC0C7EC008C5321 /* XHPopMenuItem.m */; };
+		0D9440C41CC0C7EC008C5321 /* XHPopMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9440C11CC0C7EC008C5321 /* XHPopMenuItemView.m */; };
+		0D9440C61CC0C808008C5321 /* PopMenuHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9440C51CC0C808008C5321 /* PopMenuHelper.swift */; };
+		0D9440C81CC0CD45008C5321 /* MoreFunctionFrame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9440C71CC0CD45008C5321 /* MoreFunctionFrame@2x.png */; };
 		0DA056AE1CB660DF00C00911 /* HomePageControlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA056AD1CB660DF00C00911 /* HomePageControlModel.swift */; };
 		0DA056B81CB7402700C00911 /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA056B71CB7402700C00911 /* CommonFunctions.swift */; };
 		0DA056C61CB75AE900C00911 /* IMG_1722.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DA056C21CB75AE900C00911 /* IMG_1722.png */; };
@@ -67,7 +76,6 @@
 		0DAE57731CAF78EC004E36B4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE57721CAF78EC004E36B4 /* User.swift */; };
 		0DAE57751CAF78F3004E36B4 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE57741CAF78F3004E36B4 /* Constans.swift */; };
 		0DAE57781CAF7C5D004E36B4 /* HomeSplashAnimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE57771CAF7C5D004E36B4 /* HomeSplashAnimViewController.swift */; };
-		0DAE57851CAF833E004E36B4 /* LeftSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE57811CAF833E004E36B4 /* LeftSlideViewController.m */; };
 		0DAE57861CAF833E004E36B4 /* UIView_extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE57831CAF833E004E36B4 /* UIView_extra.m */; };
 		0DAE578C1CAFA1AD004E36B4 /* SlideInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE578B1CAFA1AD004E36B4 /* SlideInfoViewController.swift */; };
 		0DAE578E1CB0B120004E36B4 /* CellStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE578D1CB0B120004E36B4 /* CellStyle.swift */; };
@@ -136,6 +144,22 @@
 		0D2D8B261CB6046D0013B327 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		0D2D8B271CB6046D0013B327 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		0D2D8B281CB6046D0013B327 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		0D93A7431CBE556D00579CDC /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RECommonFunctions.h; path = SlideViewController/RECommonFunctions.h; sourceTree = SOURCE_ROOT; };
+		0D93A7441CBE556D00579CDC /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RECommonFunctions.m; path = SlideViewController/RECommonFunctions.m; sourceTree = SOURCE_ROOT; };
+		0D93A7451CBE556D00579CDC /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RESideMenu.h; path = SlideViewController/RESideMenu.h; sourceTree = SOURCE_ROOT; };
+		0D93A7461CBE556D00579CDC /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RESideMenu.m; path = SlideViewController/RESideMenu.m; sourceTree = SOURCE_ROOT; };
+		0D93A7471CBE556D00579CDC /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+RESideMenu.h"; path = "SlideViewController/UIViewController+RESideMenu.h"; sourceTree = SOURCE_ROOT; };
+		0D93A7481CBE556D00579CDC /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+RESideMenu.m"; path = "SlideViewController/UIViewController+RESideMenu.m"; sourceTree = SOURCE_ROOT; };
+		0D93A74C1CBE576500579CDC /* Stars@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Stars@2x.png"; path = "Images/Stars@2x.png"; sourceTree = SOURCE_ROOT; };
+		0D9440BB1CC0C7EC008C5321 /* XHFoundationMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHFoundationMacro.h; sourceTree = "<group>"; };
+		0D9440BC1CC0C7EC008C5321 /* XHPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPopMenu.h; sourceTree = "<group>"; };
+		0D9440BD1CC0C7EC008C5321 /* XHPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPopMenu.m; sourceTree = "<group>"; };
+		0D9440BE1CC0C7EC008C5321 /* XHPopMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPopMenuItem.h; sourceTree = "<group>"; };
+		0D9440BF1CC0C7EC008C5321 /* XHPopMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPopMenuItem.m; sourceTree = "<group>"; };
+		0D9440C01CC0C7EC008C5321 /* XHPopMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPopMenuItemView.h; sourceTree = "<group>"; };
+		0D9440C11CC0C7EC008C5321 /* XHPopMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPopMenuItemView.m; sourceTree = "<group>"; };
+		0D9440C51CC0C808008C5321 /* PopMenuHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopMenuHelper.swift; path = ../Helper/PopMenuHelper.swift; sourceTree = "<group>"; };
+		0D9440C71CC0CD45008C5321 /* MoreFunctionFrame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MoreFunctionFrame@2x.png"; path = "Images/MoreFunctionFrame@2x.png"; sourceTree = SOURCE_ROOT; };
 		0DA056AD1CB660DF00C00911 /* HomePageControlModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePageControlModel.swift; path = Models/HomePageControlModel.swift; sourceTree = SOURCE_ROOT; };
 		0DA056B71CB7402700C00911 /* CommonFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonFunctions.swift; path = Helper/CommonFunctions.swift; sourceTree = SOURCE_ROOT; };
 		0DA056C21CB75AE900C00911 /* IMG_1722.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_1722.png; sourceTree = "<group>"; };
@@ -157,8 +181,6 @@
 		0DAE57741CAF78F3004E36B4 /* Constans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		0DAE57771CAF7C5D004E36B4 /* HomeSplashAnimViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSplashAnimViewController.swift; sourceTree = "<group>"; };
 		0DAE577D1CAF833C004E36B4 /* 微漯河-Bridging-Header.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "微漯河-Bridging-Header.m"; sourceTree = "<group>"; };
-		0DAE57801CAF833E004E36B4 /* LeftSlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSlideViewController.h; sourceTree = "<group>"; };
-		0DAE57811CAF833E004E36B4 /* LeftSlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSlideViewController.m; sourceTree = "<group>"; };
 		0DAE57821CAF833E004E36B4 /* UIView_extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView_extra.h; sourceTree = "<group>"; };
 		0DAE57831CAF833E004E36B4 /* UIView_extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView_extra.m; sourceTree = "<group>"; };
 		0DAE578B1CAFA1AD004E36B4 /* SlideInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInfoViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +209,7 @@
 		0D2D8A911CB10E020013B327 /* 3rd Party */ = {
 			isa = PBXGroup;
 			children = (
+				0D9440BA1CC0C7EC008C5321 /* PopMenu */,
 				0D2D8AFA1CB6046D0013B327 /* MJRefresh */,
 				0D2D8AB61CB1135B0013B327 /* YSSegmentedControl.swift */,
 			);
@@ -288,6 +311,35 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		0D9440BA1CC0C7EC008C5321 /* PopMenu */ = {
+			isa = PBXGroup;
+			children = (
+				0D9440BB1CC0C7EC008C5321 /* XHFoundationMacro.h */,
+				0D9440BC1CC0C7EC008C5321 /* XHPopMenu.h */,
+				0D9440BD1CC0C7EC008C5321 /* XHPopMenu.m */,
+				0D9440BE1CC0C7EC008C5321 /* XHPopMenuItem.h */,
+				0D9440BF1CC0C7EC008C5321 /* XHPopMenuItem.m */,
+				0D9440C01CC0C7EC008C5321 /* XHPopMenuItemView.h */,
+				0D9440C11CC0C7EC008C5321 /* XHPopMenuItemView.m */,
+			);
+			name = PopMenu;
+			path = ../PopMenu;
+			sourceTree = "<group>";
+		};
+		0D9440C91CC0D39B008C5321 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
+		0D9440CA1CC0D3E4008C5321 /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Discovery;
+			sourceTree = "<group>";
+		};
 		0DA056DA1CB7A61500C00911 /* Community */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +373,8 @@
 				0DAE57791CAF8042004E36B4 /* Images */,
 				0D2D8A8C1CB108C70013B327 /* HomePage */,
 				0DA056DA1CB7A61500C00911 /* Community */,
+				0D9440C91CC0D39B008C5321 /* Message */,
+				0D9440CA1CC0D3E4008C5321 /* Discovery */,
 				0DAE57761CAF7C3E004E36B4 /* Home */,
 				0DAE57711CAF7880004E36B4 /* Models */,
 				0D2D8A911CB10E020013B327 /* 3rd Party */,
@@ -340,6 +394,7 @@
 				0DAE577D1CAF833C004E36B4 /* 微漯河-Bridging-Header.m */,
 				0DAE57741CAF78F3004E36B4 /* Constans.swift */,
 				0DA056B71CB7402700C00911 /* CommonFunctions.swift */,
+				0D9440C51CC0C808008C5321 /* PopMenuHelper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -368,6 +423,8 @@
 		0DAE57791CAF8042004E36B4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0D9440C71CC0CD45008C5321 /* MoreFunctionFrame@2x.png */,
+				0D93A74C1CBE576500579CDC /* Stars@2x.png */,
 				0D28D3D61CB8F9B60034A448 /* icn_bills.png */,
 				0D28D3D71CB8F9B60034A448 /* icn_directory.png */,
 				0D28D3D81CB8F9B60034A448 /* icn_events.png */,
@@ -398,8 +455,12 @@
 		0DAE577C1CAF831B004E36B4 /* SlideViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0DAE57801CAF833E004E36B4 /* LeftSlideViewController.h */,
-				0DAE57811CAF833E004E36B4 /* LeftSlideViewController.m */,
+				0D93A7431CBE556D00579CDC /* RECommonFunctions.h */,
+				0D93A7441CBE556D00579CDC /* RECommonFunctions.m */,
+				0D93A7451CBE556D00579CDC /* RESideMenu.h */,
+				0D93A7461CBE556D00579CDC /* RESideMenu.m */,
+				0D93A7471CBE556D00579CDC /* UIViewController+RESideMenu.h */,
+				0D93A7481CBE556D00579CDC /* UIViewController+RESideMenu.m */,
 				0DAE57821CAF833E004E36B4 /* UIView_extra.h */,
 				0DAE57831CAF833E004E36B4 /* UIView_extra.m */,
 				0DAE578B1CAFA1AD004E36B4 /* SlideInfoViewController.swift */,
@@ -466,6 +527,7 @@
 			files = (
 				0D2D8AA01CB10FBD0013B327 /* icon_fans.png in Resources */,
 				0DAE57661CAF678C004E36B4 /* LaunchScreen.storyboard in Resources */,
+				0D93A74D1CBE576500579CDC /* Stars@2x.png in Resources */,
 				0D28D3E41CB8F9B60034A448 /* icn_pif.png in Resources */,
 				0D2D8AA61CB10FBD0013B327 /* logo.png in Resources */,
 				0D28D3E11CB8F9B60034A448 /* icn_invest.png in Resources */,
@@ -479,6 +541,7 @@
 				0D2D8B381CB6046D0013B327 /* MJRefresh.bundle in Resources */,
 				0D28D3E21CB8F9B60034A448 /* icn_mart.png in Resources */,
 				0D28D3E51CB8F9B60034A448 /* icn_remit.png in Resources */,
+				0D9440C81CC0CD45008C5321 /* MoreFunctionFrame@2x.png in Resources */,
 				0DA056C91CB75AE900C00911 /* IMG_1725.png in Resources */,
 				0D28D3E31CB8F9B60034A448 /* icn_peerlending.png in Resources */,
 				0DA056C81CB75AE900C00911 /* IMG_1724.png in Resources */,
@@ -504,20 +567,23 @@
 				0D2D8B351CB6046D0013B327 /* MJRefreshNormalHeader.m in Sources */,
 				0D2D8B2B1CB6046D0013B327 /* MJRefreshComponent.m in Sources */,
 				0DAE575E1CAF678C004E36B4 /* HomeTabBarViewController.swift in Sources */,
-				0DAE57851CAF833E004E36B4 /* LeftSlideViewController.m in Sources */,
+				0D93A7491CBE556D00579CDC /* RECommonFunctions.m in Sources */,
 				0DAE578E1CB0B120004E36B4 /* CellStyle.swift in Sources */,
 				0D2D8B2F1CB6046D0013B327 /* MJRefreshAutoNormalFooter.m in Sources */,
 				0D2D8B2C1CB6046D0013B327 /* MJRefreshFooter.m in Sources */,
 				0DAE575C1CAF678B004E36B4 /* AppDelegate.swift in Sources */,
 				0D28D3D01CB8D9230034A448 /* CommunityCollectionCell.swift in Sources */,
 				0D2D8B361CB6046D0013B327 /* MJRefreshStateHeader.m in Sources */,
+				0D9440C21CC0C7EC008C5321 /* XHPopMenu.m in Sources */,
 				0D2D8B371CB6046D0013B327 /* DIYRefreshGifHeader.m in Sources */,
 				0DA056DC1CB7A68600C00911 /* CommunityControl.swift in Sources */,
 				0DA056AE1CB660DF00C00911 /* HomePageControlModel.swift in Sources */,
 				0D2D8B2E1CB6046D0013B327 /* MJRefreshAutoGifFooter.m in Sources */,
 				0D2D8B3B1CB6046D0013B327 /* UIScrollView+MJRefresh.m in Sources */,
 				0DAE578C1CAFA1AD004E36B4 /* SlideInfoViewController.swift in Sources */,
+				0D93A74B1CBE556D00579CDC /* UIViewController+RESideMenu.m in Sources */,
 				0D28D3D31CB8DACB0034A448 /* CommunityCollectionView.swift in Sources */,
+				0D9440C31CC0C7EC008C5321 /* XHPopMenuItem.m in Sources */,
 				0D2D8B2A1CB6046D0013B327 /* MJRefreshBackFooter.m in Sources */,
 				0D2D8B391CB6046D0013B327 /* MJRefreshConst.m in Sources */,
 				0D2D8B331CB6046D0013B327 /* MJRefreshBackStateFooter.m in Sources */,
@@ -531,8 +597,11 @@
 				0D2D8B311CB6046D0013B327 /* MJRefreshBackGifFooter.m in Sources */,
 				0DAE57781CAF7C5D004E36B4 /* HomeSplashAnimViewController.swift in Sources */,
 				0D2D8B2D1CB6046D0013B327 /* MJRefreshHeader.m in Sources */,
+				0D93A74A1CBE556D00579CDC /* RESideMenu.m in Sources */,
+				0D9440C41CC0C7EC008C5321 /* XHPopMenuItemView.m in Sources */,
 				0D28D3D51CB8EC590034A448 /* SourceModel.swift in Sources */,
 				0D2D8B301CB6046D0013B327 /* MJRefreshAutoStateFooter.m in Sources */,
+				0D9440C61CC0C808008C5321 /* PopMenuHelper.swift in Sources */,
 				0D2D8B321CB6046D0013B327 /* MJRefreshBackNormalFooter.m in Sources */,
 				0D2D8B3A1CB6046D0013B327 /* UIScrollView+MJExtension.m in Sources */,
 				0DA056DE1CB7A74F00C00911 /* CommunityControlModel.swift in Sources */,

@@ -26,4 +26,9 @@ class CommunityControlModel: UIViewController {
         communityTable!.mj_header    = diyRefreshGifHeader.headerWithRefreshingTarget(self, refreshingAction: "loadData")
         communityTable!.mj_header.beginRefreshing()
     }
+    
+    enum PageIndex: Int {
+        case HOTSPOT   = 0
+        case FAVORITE  = 1
+    }
 }

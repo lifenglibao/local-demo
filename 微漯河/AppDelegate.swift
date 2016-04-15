@@ -12,22 +12,27 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    lazy var leftSlideVC = LeftSlideViewController()
-
+    var sideMenuViewController = RESideMenu()
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let rootController = GET_VIEW_CONTROLLER(StoryBoard_Home.SB_HOME_SPLASH_ANIMATION)
-        let navigationController = UINavigationController(rootViewController: rootController)
-        
-        leftSlideVC = LeftSlideViewController.init()
-        let slideInfoVC = GET_VIEW_CONTROLLER(StoryBoard_Home.SB_SLIDE_VIEW_CONTROLLER)
+
+        initSideMenu()
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window!.rootViewController = self.leftSlideVC.dynamicType.init(leftView: slideInfoVC, andMainView: navigationController, withEnabled:false)
+        self.window!.rootViewController = sideMenuViewController
         self.window!.makeKeyAndVisible()
         return true
     }
 
+    
+    private func initSideMenu () {
+        
+        let rootController = GET_VIEW_CONTROLLER(StoryBoard_Home.SB_HOME_SPLASH_ANIMATION)
+        let navigationController = UINavigationController(rootViewController: rootController)
+        let slideInfoVC = GET_VIEW_CONTROLLER(StoryBoard_Home.SB_SLIDE_VIEW_CONTROLLER)
+        sideMenuViewController = RESideMenu.init(contentViewController: navigationController, leftMenuViewController: slideInfoVC, rightMenuViewController: nil)
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

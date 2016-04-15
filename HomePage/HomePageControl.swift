@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HomePageControl: HomePageControlModel,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,YSSegmentedControlDelegate{
+class HomePageControl: HomePageControlModel,UIScrollViewDelegate,YSSegmentedControlDelegate{
     
     let imageDic = [
         
@@ -74,18 +74,36 @@ class HomePageControl: HomePageControlModel,UITableViewDataSource,UITableViewDel
         print("successful load data")
     }
     
+    func segmentedControlWillPressItemAtIndex(segmentedControl: YSSegmentedControl, index: Int) {
+        
+    }
+    
+    func segmentedControlDidPressedItemAtIndex(segmentedControl: YSSegmentedControl, index: Int) {
+        
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        let pageWidth = Int(Float(scrollView.frame.size.width))
+        
+        let page = Int(Float(scrollView.contentOffset.x) / Float(pageWidth))
+        segmented?.selectItemAtIndex(page, withAnimation: true)
+    }
+
+}
+
+extension HomePageControl: UITableViewDataSource,UITableViewDelegate {
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let identifier = "cell"
         var cell = tableView.dequeueReusableCellWithIdentifier(identifier)
-
+        
         if tableView == concernsTable {
             if cell == nil {
                 cell = cellStyle.initWithHomeConcernsStyle(concernsTable!, style: .Default, reuseIdentifier: identifier, dataDict: data[indexPath.row] as! NSDictionary)
@@ -146,21 +164,4 @@ class HomePageControl: HomePageControlModel,UITableViewDataSource,UITableViewDel
         }
         return 0
     }
-    
-    
-    func segmentedControlWillPressItemAtIndex(segmentedControl: YSSegmentedControl, index: Int) {
-        
-    }
-    
-    func segmentedControlDidPressedItemAtIndex(segmentedControl: YSSegmentedControl, index: Int) {
-        
-    }
-    
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        let pageWidth = Int(Float(scrollView.frame.size.width))
-        
-        let page = Int(Float(scrollView.contentOffset.x) / Float(pageWidth))
-        segmented?.selectItemAtIndex(page, withAnimation: true)
-    }
-
 }
